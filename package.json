@@ -1,0 +1,16 @@
+{
+  "name": "go-demo",
+  "version": "1.0.0",
+  "description": "### how to code in go https://golang.org/doc/code.html",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "go build -a && godemo",
+    "docgen": "swagger generate spec -o ./documentation/swagger.json --scan-models",
+    "test": "curl http://localhost:5000/api/users/1"
+  },
+  "author": "",
+  "license": "ISC"
+}
