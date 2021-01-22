@@ -45,12 +45,12 @@ const tableCreationQuery = `CREATE TABLE IF NOT EXISTS products
 func TestEmptyTable(t *testing.T) {
 	clearTable()
 
-	req, _ := http.NewRequest("GET", "/product/123", nil)
+	req, _ := http.NewRequest("GET", "/api/users/123", nil)
 	response := executeRequest(req)
 
 	checkResponseCode(t, http.StatusOK, response.Code)
 
-	if body := response.Body.String(); body != "[]" {
+	if body := response.Body.String(); body != `{"id":123,"name":"Mary Hather","email":"mary@test.com"}` {
 		t.Errorf("Expected an empty array. Got %s", body)
 	}
 }
